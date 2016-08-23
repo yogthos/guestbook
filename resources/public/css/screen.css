@@ -31,3 +31,35 @@ body {
   }
 }
 
+.content {
+    background: white;
+    width: 520px;
+}
+
+form, .error {
+    width: 520px;
+    padding: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    background: white;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    position: relative;
+    font-size: 16px;
+    padding: 5px;
+    border-bottom: 1px dotted #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li time {
+    font-size: 12px;
+    padding-bottom: 20px;
+}

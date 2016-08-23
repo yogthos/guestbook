@@ -1,4 +1,6 @@
-<div class="row"<
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
      <div class="span12">
           <ul class="content">
               {% for item in messages %}
@@ -11,3 +13,28 @@
           </ul>
      </div>
 </div>
+<div class="row"<
+     <div class="span12">
+          <form method="POST" action="/message">
+                <div class="form-group">
+                {% csrf-field %}
+                <p>
+                        Name:
+                        <input class="form-control"
+                               type="text"
+                               name="name"
+                               value="" />
+                </p>
+                <p>
+                        Message:
+                        <textarea class="form-control"
+                                  rows="4"
+                                  cols="50"
+                                  name="message"></textarea>
+                </p>
+                <input type="submit" class="btn btn-primary" value="comment" />
+                </div>
+          </form>  
+     </div>
+</div>
+{% endblock %}
