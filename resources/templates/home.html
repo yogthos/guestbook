@@ -25,6 +25,9 @@
                                name="name"
                                value="" />
                 </p>
+                {% if errors.name %}
+                <div class="alert alert-danger">{{errors.name|join}}</div>
+                {% endif %}
                 <p>
                         Message:
                         <textarea class="form-control"
@@ -32,6 +35,9 @@
                                   cols="50"
                                   name="message"></textarea>
                 </p>
+                {% if errors.message %}
+                <div class="alert alert-danger">{{errors.message|join}}</div>
+                {% endif %}
                 <input type="submit" class="btn btn-primary" value="comment" />
                 </div>
           </form>  
