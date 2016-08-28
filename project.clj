@@ -26,7 +26,8 @@
                  [com.h2database/h2 "1.4.192"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
                  [luminus-immutant "0.2.2"]
-                 [org.clojure/clojurescript "1.7.228" :scope "provided"]]
+                 [org.clojure/clojurescript "1.7.228" :scope "provided"]
+                 [reagent "0.5.1"]]
 
   :min-lein-version "2.0.0"
 
