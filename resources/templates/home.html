@@ -1,4 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
+<input id="token" type="hidden" value="{{csrf-token}}">
 <div id="content"></div>
 {% endblock %}
