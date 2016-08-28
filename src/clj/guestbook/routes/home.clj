@@ -14,12 +14,8 @@
     :name v/required
     :message [v/required [v/min-count 10]])))
 
-(defn home-page [{:keys [flash]}]
-  (layout/render
-   "home.html"
-   (merge 
-    {:messages (db/get-messages)}
-    (select-keys flash [:name :message :errors]))))
+(defn home-page []
+  (layout/render "home.html"))
 
 (defn save-message! [{:keys [params]}]
   (if-let [errors (validate-message params)]
@@ -36,6 +32,7 @@
   (layout/render "about.html"))
 
 (defroutes home-routes
-  (GET "/" request (home-page request))
+  (GET "/" [] (home-page))
+  (GET "/messages" [] (response/ok (db/get-messages)))
   (POST "/message" req (save-message! req))
   (GET "/about" [] (about-page)))
