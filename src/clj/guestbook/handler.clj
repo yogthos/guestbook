@@ -15,7 +15,9 @@
 (def app-routes
   (routes
    #'websocket-routes
-   (wrap-routes #'home-routes middleware/wrap-csrf)
+   (-> #'home-routes
+       (wrap-routes middleware/wrap-csrf)
+       (wrap-routes middleware/wrap-formats))
    (route/not-found
     (:body
      (error-page {:status 404
